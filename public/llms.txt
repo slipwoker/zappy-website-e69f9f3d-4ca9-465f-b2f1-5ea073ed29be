@@ -1,0 +1,59 @@
+# Business — Generative Engine Optimization Map
+
+---
+
+## Pages
+
+### בית
+https://example.com
+גלה את עולם הבידור והמשחקים המרתק של RoyalFlush. חוויות flush and royal flush בלתי נשכחות, אירועים מיוחדים ובידור ברמה עולמית. הצטרף עכשיו!
+
+### אודות
+https://example.com/about
+למדו על החזון והתשוקה שהופכים את RoyalFlush ליעד הבידור המוביל. מומחיות בעולם ה-royal flush, מסורת של מצוינות וחדשנות. גלו את הסיפור שלנו!
+
+### אירועים
+https://example.com/events
+חוגגים אירוע מיוחד? גלו את מגוון אירועי flush royal flush המרהיבים שלנו. ערבי בידור בלתי נשכחים, טורנירים מקצועיים וחוויות VIP בלעדיות רק אצלנו!
+
+### צור קשר
+https://example.com/contact
+מוכנים לחוויית flush and royal flush שלא תשכחו? צרו קשר עם הצוות המקצועי שלנו עכשיו. זמינים לכל שאלה, הזמנה או בקשה מיוחדת. נשמח לשמוע מכם!
+
+### Products
+https://example.com/products
+המוצרים שלנו - RoyalFlush
+
+### Product Detail
+https://example.com/product/:slug
+פרטי המוצר - RoyalFlush
+
+### Category
+https://example.com/category/:slug
+מוצרים - RoyalFlush
+
+## Legal & Policy
+
+### Privacy Policy
+https://example.com/privacy
+Information about how user data is collected, stored, and protected.
+
+### Terms & Conditions
+https://example.com/terms
+Legal terms describing service usage, rights, and policies.
+
+### Accessibility Statement
+https://example.com/accessibility
+Information about WCAG compliance and accessibility features.
+
+---
+
+# Business Context (for LLM understanding)
+
+## About Business
+---
+
+# Additional Resources
+
+- **Sitemap**: https://example.com/sitemap.xml
+- **Robots.txt**: https://example.com/robots.txt

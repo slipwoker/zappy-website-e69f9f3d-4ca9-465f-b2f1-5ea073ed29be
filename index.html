@@ -1,0 +1,681 @@
+<!DOCTYPE html><html lang="he" dir="rtl" data-zappy-site-type="ecommerce"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>חווית הרויאל פלאש המושלמת מחכה לך — RoyalFlush</title>
+  <meta name="description" content="גלה את עולם הבידור והמשחקים המרתק של RoyalFlush. חוויות flush and royal flush בלתי נשכחות, אירועים מיוחדים ובידור ברמה עולמית. הצטרף עכשיו!">
+  <meta name="keywords" content="flush and royal flush, the royal flush, RoyalFlush, משחקים ובידור, בידור איכותי">
+  <meta name="robots" content="index, follow">
+  
+  <meta property="og:title" content="חווית הרויאל פלאש המושלמת מחכה לך — RoyalFlush">
+  <meta property="og:description" content="גלה את עולם הבידור והמשחקים המרתק של RoyalFlush. חוויות flush and royal flush בלתי נשכחות, אירועים מיוחדים ובידור ברמה עולמית. הצטרף עכשיו!">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="he_IL">
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="חווית הרויאל פלאש המושלמת מחכה לך — RoyalFlush">
+  <meta name="twitter:description" content="גלה את עולם הבידור והמשחקים המרתק של RoyalFlush. חוויות flush and royal flush בלתי נשכחות, אירועים מיוחדים ובידור ברמה עולמית. הצטרף עכשיו!">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/assets/favicon-512x512.png">
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+    <!-- Cookie Consent -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vanilla-cookieconsent@3/dist/cookieconsent.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-cookieconsent@3/dist/cookieconsent.umd.js"></script>
+    <!-- Mickidum Accessibility Toolbar -->
+    <script src="https://cdn.jsdelivr.net/gh/mickidum/acc_toolbar/acctoolbar/acctoolbar.min.js"></script>
+<!-- Zappy Analytics -->
+<script>
+(function() {
+  'use strict';
+  
+  // Configuration
+  var config = {
+    websiteId: 'e69f9f3d-4ca9-465f-b2f1-5ea073ed29be',
+    apiUrl: 'https://api.zappy5.com/api/analytics/track',
+    sessionDuration: 30 * 60 * 1000, // 30 minutes
+    visitorDuration: 30 * 24 * 60 * 60 * 1000, // 30 days
+    trackPageViews: true,
+    trackClicks: true,
+    trackFormSubmissions: true
+  };
+  
+  // Generate or retrieve persistent visitor ID (30 days)
+  function getVisitorId() {
+    var visitorKey = 'zappy_visitor_' + config.websiteId;
+    var visitor = null;
+    
+    try {
+      visitor = localStorage.getItem(visitorKey);
+      if (visitor) {
+        var visitorData = JSON.parse(visitor);
+        var now = Date.now();
+        
+        // Check if visitor ID is still valid (30 days)
+        if (now - visitorData.created < config.visitorDuration) {
+          // Update last seen timestamp
+          visitorData.lastSeen = now;
+          localStorage.setItem(visitorKey, JSON.stringify(visitorData));
+          return visitorData.id;
+        }
+      }
+    } catch (e) {
+      console.warn('Zappy Analytics: LocalStorage not available');
+    }
+    
+    // Generate new visitor ID
+    var newVisitorId = 'zv_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+    
+    try {
+      localStorage.setItem(visitorKey, JSON.stringify({
+        id: newVisitorId,
+        created: Date.now(),
+        lastSeen: Date.now()
+      }));
+    } catch (e) {
+      // Continue without local storage
+    }
+    
+    return newVisitorId;
+  }
+  
+  // Generate or retrieve session ID (30 minutes)
+  function getSessionId() {
+    var sessionKey = 'zappy_session_' + config.websiteId;
+    var session = null;
+    
+    try {
+      session = sessionStorage.getItem(sessionKey);
+      if (session) {
+        var sessionData = JSON.parse(session);
+        var now = Date.now();
+        
+        // Check if session is still valid
+        if (now - sessionData.timestamp < config.sessionDuration) {
+          // Update timestamp
+          sessionData.timestamp = now;
+          sessionStorage.setItem(sessionKey, JSON.stringify(sessionData));
+          return sessionData.id;
+        }
+      }
+    } catch (e) {
+      console.warn('Zappy Analytics: SessionStorage not available');
+    }
+    
+    // Generate new session ID
+    var newSessionId = 'zs_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+    
+    try {
+      sessionStorage.setItem(sessionKey, JSON.stringify({
+        id: newSessionId,
+        timestamp: Date.now()
+      }));
+    } catch (e) {
+      // Continue without session storage
+    }
+    
+    return newSessionId;
+  }
+  
+  var visitorId = getVisitorId();
+  var sessionId = getSessionId();
+  
+  // Track an event
+  function trackEvent(eventType, data) {
+    data = data || {};
+    
+    var eventData = {
+      website_id: config.websiteId,
+      event_type: eventType,
+      page_path: window.location.pathname,
+      referrer: document.referrer || 'direct',
+      visitor_id: visitorId,
+      session_id: sessionId,
+      metadata: data
+    };
+    
+    // Use sendBeacon if available (better for page unload events)
+    if (navigator.sendBeacon) {
+      var blob = new Blob([JSON.stringify(eventData)], { type: 'application/json' });
+      navigator.sendBeacon(config.apiUrl, blob);
+    } else {
+      // Fallback to fetch
+      fetch(config.apiUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(eventData),
+        keepalive: true
+      }).catch(function(error) {
+        console.warn('Zappy Analytics: Failed to track event', error);
+      });
+    }
+  }
+  
+  // Track page view
+  if (config.trackPageViews) {
+    trackEvent('pageview', {
+      title: document.title,
+      url: window.location.href
+    });
+  }
+  
+  // Track clicks on important elements
+  if (config.trackClicks) {
+    document.addEventListener('click', function(e) {
+      var target = e.target;
+      
+      // Track button clicks (counted as actions)
+      if (target.tagName === 'BUTTON' || target.closest('button')) {
+        var button = target.tagName === 'BUTTON' ? target : target.closest('button');
+        trackEvent('click', {
+          element: 'button',
+          text: button.textContent.trim().substring(0, 100),
+          id: button.id || null,
+          class: button.className || null
+        });
+      }
+      
+      // Track link clicks (navigation - not counted as actions)
+      else if (target.tagName === 'A' || target.closest('a')) {
+        var link = target.tagName === 'A' ? target : target.closest('a');
+        trackEvent('navigation', {
+          element: 'link',
+          text: link.textContent.trim().substring(0, 100),
+          href: link.href,
+          external: link.hostname !== window.location.hostname
+        });
+      }
+    }, true);
+  }
+  
+  // Track form submissions
+  if (config.trackFormSubmissions) {
+    document.addEventListener('submit', function(e) {
+      var form = e.target;
+      
+      trackEvent('form_submit', {
+        form_id: form.id || null,
+        form_name: form.name || null,
+        form_action: form.action || null,
+        form_method: form.method || 'GET'
+      });
+    }, true);
+  }
+  
+  // Track time on page (send on page unload)
+  var pageLoadTime = Date.now();
+  
+  window.addEventListener('beforeunload', function() {
+    var timeOnPage = Math.floor((Date.now() - pageLoadTime) / 1000); // in seconds
+    
+    trackEvent('page_unload', {
+      time_on_page: timeOnPage,
+      page_path: window.location.pathname
+    });
+  });
+  
+  // Expose tracking function globally for custom events
+  window.zappyAnalytics = {
+    track: trackEvent,
+    getVisitorId: function() { return visitorId; },
+    getSessionId: function() { return sessionId; }
+  };
+  
+})();
+</script>
+<!-- End Zappy Analytics -->
+
+    <style id="zappy-dropdown-submenu-styles">
+      /* ========== DESKTOP DROPDOWN SUBMENU STYLES ========== */
+      /* Base styles for dropdown submenus - parent must be positioned */
+      .nav-menu li:has(.sub-menu), nav li:has(.sub-menu), .navbar li:has(.sub-menu), #navMenu li:has(.sub-menu) { position: relative; }
+      /* Submenu base - hidden by default */
+      .nav-menu .sub-menu, nav .sub-menu, .navbar .sub-menu, #navMenu .sub-menu { display: block !important; position: absolute !important; top: 100%; left: 0; min-width: 220px; background: white; border-radius: 8px; box-shadow: 0 8px 25px rgba(0,0,0,0.15); padding: 8px 0; opacity: 0; visibility: hidden; transform: translateY(10px); transition: all 0.3s ease; z-index: 1000; list-style: none; pointer-events: none; }
+      /* CRITICAL: Desktop hover styles to show dropdown */
+      .nav-menu li:hover > .sub-menu, nav li:hover > .sub-menu, .navbar li:hover > .sub-menu, #navMenu li:hover > .sub-menu { opacity: 1 !important; visibility: visible !important; transform: translateY(0) !important; pointer-events: auto !important; }
+      /* Submenu item styling */
+      .sub-menu li { list-style: none; margin: 0; padding: 0; }
+      .sub-menu a { display: block !important; padding: 10px 16px !important; color: #333 !important; font-weight: 500; text-decoration: none; white-space: nowrap; transition: background-color 0.2s; }
+      .sub-menu a:hover { background-color: #f5f5f5; }
+      /* RTL (Hebrew/Arabic) dropdown positioning */
+      [dir="rtl"] .nav-menu .sub-menu, [dir="rtl"] nav .sub-menu, [dir="rtl"] .navbar .sub-menu, html[lang="he"] .nav-menu .sub-menu, html[lang="he"] nav .sub-menu, html[lang="he"] .navbar .sub-menu, html[lang="ar"] .nav-menu .sub-menu, html[lang="ar"] nav .sub-menu, html[lang="ar"] .navbar .sub-menu { left: auto !important; right: 0 !important; }
+      /* Hide empty dropdown menus */
+      .sub-menu:empty, .sub-menu:not(:has(li:not(.zappy-hidden-menu-item))), .sub-menu:not(:has(li)) { display: none !important; opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; }
+      /* Desktop: show submenu on Menu Group hover */
+      li:has(.menu-group-title):hover > .sub-menu { opacity: 1 !important; visibility: visible !important; transform: translateY(0) !important; pointer-events: auto !important; }
+      /* Menu Group title styling */
+      .nav-menu > li > .menu-group-title, #navMenu > li > .menu-group-title { display: inline-block; padding: 0.5rem 1rem; cursor: default; user-select: none; }
+      
+      /* ========== MOBILE SUBMENU STYLES ========== */
+      @media (max-width: 768px) {
+        .nav-menu .sub-menu, nav .sub-menu, .navbar .sub-menu, #navMenu .sub-menu { position: static !important; transform: none !important; box-shadow: none !important; background: transparent !important; max-height: 0; overflow: hidden; opacity: 0; visibility: hidden; transition: max-height 0.3s ease, opacity 0.3s ease; padding: 0 !important; border-radius: 0 !important; }
+        .sub-menu.mobile-expanded { max-height: 500px !important; opacity: 1 !important; visibility: visible !important; padding: 8px 0 8px 16px !important; }
+        [dir="rtl"] .sub-menu.mobile-expanded, html[lang="he"] .sub-menu.mobile-expanded { padding: 8px 16px 8px 0 !important; }
+        /* Disable hover behavior on mobile */
+        .nav-menu li:hover > .sub-menu, nav li:hover > .sub-menu, .navbar li:hover > .sub-menu, #navMenu li:hover > .sub-menu { opacity: 0; visibility: hidden; pointer-events: none; }
+        .nav-menu li > .sub-menu.mobile-expanded, nav li > .sub-menu.mobile-expanded, .navbar li > .sub-menu.mobile-expanded, #navMenu li > .sub-menu.mobile-expanded { opacity: 1 !important; visibility: visible !important; pointer-events: auto !important; }
+        .nav-menu li:has(.sub-menu), nav li:has(.sub-menu), .navbar li:has(.sub-menu), #navMenu li:has(.sub-menu) { display: flex !important; flex-wrap: wrap !important; align-items: center !important; }
+        .nav-menu li:has(.sub-menu) > a, nav li:has(.sub-menu) > a, .navbar li:has(.sub-menu) > a, #navMenu li:has(.sub-menu) > a { flex: 1 !important; }
+        .nav-menu li:has(.sub-menu) > a [class*="chevron"], .nav-menu li:has(.sub-menu) > a [class*="arrow"], .nav-menu li:has(.sub-menu) > a .fa-chevron-down, .nav-menu li:has(.sub-menu) > a .fa-angle-down, nav li:has(.sub-menu) > a [class*="chevron"], nav li:has(.sub-menu) > a [class*="arrow"], #navMenu li:has(.sub-menu) > a [class*="chevron"], #navMenu li:has(.sub-menu) > a [class*="arrow"] { display: none !important; visibility: hidden !important; }
+        .mobile-submenu-toggle { display: flex !important; align-items: center !important; justify-content: center !important; width: 44px !important; height: 44px !important; background: transparent !important; border: none !important; cursor: pointer !important; }
+        .mobile-submenu-toggle::after { content: '' !important; width: 0 !important; height: 0 !important; border-left: 6px solid transparent !important; border-right: 6px solid transparent !important; border-top: 7px solid currentColor !important; transition: transform 0.3s ease !important; }
+        .mobile-submenu-toggle.expanded::after { transform: rotate(180deg) !important; }
+        .nav-menu li:has(.sub-menu) > .sub-menu, nav li:has(.sub-menu) > .sub-menu { flex-basis: 100% !important; width: 100% !important; }
+        .sub-menu a { padding: 10px 0 !important; display: block !important; }
+        .nav-menu li:has(.sub-menu) > .menu-group-title, nav li:has(.sub-menu) > .menu-group-title, .navbar li:has(.sub-menu) > .menu-group-title, #navMenu li:has(.sub-menu) > .menu-group-title { flex: 1 !important; }
+      }
+      @media (min-width: 769px) { .mobile-submenu-toggle { display: none !important; } }
+    </style>
+</head>
+<body>
+
+    <div class="mobile-search-panel" id="mobile-search-panel">
+      <div class="search-wrapper">
+        <input type="text" id="mobile-search-input" placeholder="חיפוש מוצרים..." autocomplete="off">
+        <button class="search-submit" id="mobile-search-submit" title="חיפוש">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        </button>
+        <button class="close-search" id="close-mobile-search">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div class="search-results" id="mobile-search-results"></div>
+    </div>
+  
+<script>window.ZAPPY_WEBSITE_ID = "e69f9f3d-4ca9-465f-b2f1-5ea073ed29be";window.ZAPPY_API_BASE = (window.location.pathname.includes('/preview') ? "https://api.zappy5.com" : "https://api.zappy5.com");</script>
+  <nav class="navbar" dir="rtl">
+  <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+    <svg class="hamburger-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+      <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+    </svg>
+    <svg class="close-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" style="display:none;">
+      <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+    </svg>
+  </button>
+  
+  <button class="phone-header-btn" aria-label="Call">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+    </svg>
+  </button>
+  
+  <div class="nav-container">
+    <div class="nav-brand">
+      <a href="/" class="logo-link">
+        <img src="/assets/business-logo.webp" alt="RoyalFlush" class="logo" />
+      </a>
+    </div>
+    
+    <ul class="nav-menu" id="navMenu">
+
+    <li class="menu-item-has-children zappy-products-dropdown">
+      <a href="/products">
+        מוצרים
+        <svg class="dropdown-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M6 9l6 6 6-6"></path>
+        </svg>
+      </a>
+      <ul class="sub-menu" id="zappy-nav-category-links">
+        <li><a href="/products">כל המוצרים</a></li>
+        <!-- Categories will be loaded dynamically -->
+      </ul>
+    </li>
+  <li><a href="/about">אודות</a></li><li><a href="/events">אירועים</a></li><li><a href="/contact">צור קשר</a></li></ul><div class="nav-ecommerce-icons nav-icons-left"><div class="nav-search-box">
+    <input type="text" class="nav-search-input" id="nav-search-input" placeholder="חיפוש מוצרים..." autocomplete="off">
+    <button class="nav-search-btn" id="nav-search-btn" title="חיפוש">
+      <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+    </button>
+    <div class="nav-search-results" id="nav-search-results"></div>
+  </div></div><div class="nav-ecommerce-icons nav-icons-right"><button class="nav-search-toggle" id="mobile-search-toggle" title="חיפוש"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg></button></div>
+    
+    
+  </div>
+</nav>
+
+    <nav class="zappy-catalog-menu rtl" id="zappy-catalog-menu" dir="rtl">
+      <div class="catalog-menu-container">
+        <a href="/products" class="catalog-menu-item catalog-menu-all">כל המוצרים</a>
+        <div class="catalog-menu-categories" id="zappy-category-links">
+          <!-- Categories will be loaded dynamically -->
+        </div>
+      </div>
+    </nav>
+  
+  
+  <main>
+    <section class="home-hero-section" data-layout-spec="בית-hero" data-hero-type="fullscreen-scrim">
+  <!-- Background Image Layer (z-index: 0) -->
+  <img data-hero-bg="true" data-placeholder="home-hero-bg" data-context="Cinematic wide shot of a premium gaming lounge at night: elegant poker table with glowing neon cyan and magenta edge lighting, playing cards mid-shuffle creating motion blur, luxury leather chairs, dark moody atmosphere with dramatic side lighting, bokeh background lights, high-end casino aesthetic, professional photography, shallow depth of field, rich colors" width="1920" height="1080" src="/assets/site-home-hero-bg.webp" alt="אווירת משחקים פרימיום ב-RoyalFlush" class="home-hero-bg">
+  
+  <!-- Gradient Scrim Overlay (z-index: 1) -->
+  <div class="home-hero-scrim" aria-hidden="true"></div>
+  
+  <!-- Content Overlay Group (z-index: 10) -->
+  <div class="home-hero-content">
+    <h1>ערבי משחקים שלא תשכחו לעולם</h1>
+    <h3>משחקים מובחרים, אווירה חשמלית ורגעים בלתי נשכחים. ב-RoyalFlush כל לילה הוא חוויה מושלמת.</h3>
+    <div class="home-hero-cta-row">
+      <a href="/contact" class="btn-primary">צור קשר</a>
+      <a href="/events" class="btn-ghost">צפה באירועים</a>
+    </div>
+  </div>
+  
+  <!-- Bottom Diagonal Divider with Neon Edge (z-index: 5) -->
+  <div class="home-hero-divider-wrapper">
+    <svg data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 1200 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="home-hero-edge-glow" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" style="stop-color:rgba(0,212,255,0.75);stop-opacity:1"></stop>
+          <stop offset="50%" style="stop-color:rgba(0,212,255,0.55);stop-opacity:1"></stop>
+          <stop offset="100%" style="stop-color:rgba(0,212,255,0);stop-opacity:1"></stop>
+        </linearGradient>
+      </defs>
+      <!-- Main dark fill (bottom portion) -->
+      <path d="M0,120 L0,80 L1200,20 L1200,120 Z" fill="var(--bg-dark)"></path>
+      <!-- Neon cyan edge line -->
+      <path d="M0,80 L1200,20" stroke="url(#home-hero-edge-glow)" stroke-width="2" fill="none"></path>
+    </svg>
+  </div>
+</section>
+
+    <section class="featured-products-section" id="featured-products" data-zappy-dynamic="true">
+      <div class="container">
+        <h2 class="section-title">מוצרים מומלצים</h2>
+        <div class="product-grid featured-grid" id="zappy-featured-products">
+          <div class="loading-products">טוען מוצרים...</div>
+        </div>
+        <div class="view-all-products">
+          <a href="/products" class="btn btn-primary">צפה בכל המוצרים →</a>
+        </div>
+      </div>
+    </section>
+  
+
+    <section class="featured-categories-section" id="featured-categories" data-zappy-dynamic="true">
+      <div class="container">
+        <h2 class="section-title">קנו לפי קטגוריה</h2>
+        <div class="category-blocks" id="zappy-featured-categories">
+          <div class="loading-categories">טוען מוצרים...</div>
+        </div>
+      </div>
+    </section>
+  
+
+<section class="home-showcase-section" data-layout-spec="בית-showcase">
+  <div class="home-showcase-container">
+    <div class="home-showcase-intro">
+      <h2>חוויות מובילות</h2>
+      <p>שולחנות מאורגנים בקפידה, אנרגיה תחרותית ואירוח ברמה הגבוהה ביותר. כל ערב הוא הזדמנות לחוויה בלתי נשכחת.</p>
+      <a href="/events" class="home-showcase-cta-link">גלה את האירועים שלנו <i class="fas fa-arrow-left"></i></a>
+    </div>
+
+    <div class="home-showcase-grid">
+      <div class="home-showcase-tile">
+        <div class="home-showcase-tile-image">
+          <img data-placeholder="home-showcase-image-1" data-context="High-end tabletop board games setup on premium wooden table with warm ambient lighting, shallow depth of field, cards and game pieces in focus, neon cyan accent lighting in background, cinematic composition for gaming entertainment business" width="600" height="400" src="/assets/site-home-showcase-image-1.webp" alt="משחקי שולחן קלאסיים">
+        </div>
+        <div class="home-showcase-tile-content">
+          <h3>קלאסיקות שולחן</h3>
+          <p>משחקי אסטרטגיה ומיומנות שעומדים במבחן הזמן, בסביבה מושלמת לשעות של הנאה.</p>
+        </div>
+      </div>
+
+      <div class="home-showcase-tile">
+        <div class="home-showcase-tile-image">
+          <img data-placeholder="home-showcase-image-2" data-context="Vibrant party game night scene with friends laughing, colorful game cards spread on table, warm and neon mixed lighting, shallow depth of field, energetic atmosphere for gaming entertainment venue" width="600" height="400" src="/assets/site-home-showcase-image-2.webp" alt="ערבי משחקי מסיבה">
+        </div>
+        <div class="home-showcase-tile-content">
+          <h3>ערבי משחקי מסיבה</h3>
+          <p>משחקים חברתיים מהנים שמביאים צחוק ואנרגיה לכל קבוצה, מתאים לכל הגילאים.</p>
+        </div>
+      </div>
+
+      <div class="home-showcase-tile">
+        <div class="home-showcase-tile-image">
+          <img data-placeholder="home-showcase-image-3" data-context="Professional esports gaming console tournament setup with multiple screens, neon RGB lighting, competitive gaming atmosphere, high-end equipment, cinematic gaming venue photography" width="600" height="400" src="/assets/site-home-showcase-image-3.webp" alt="טורנירי קונסולות">
+        </div>
+        <div class="home-showcase-tile-content">
+          <h3>טורנירי קונסולות</h3>
+          <p>תחרויות משחקי וידאו ברמה פרו, עם ציוד מתקדם ואווירה תחרותית אמיתית.</p>
+        </div>
+      </div>
+
+      <div class="home-showcase-tile">
+        <div class="home-showcase-tile-image">
+          <img data-placeholder="home-showcase-image-4" data-context="Strategic board game session with detailed game board, wooden pieces, dice, cards in warm lighting, players hands visible, premium tabletop gaming atmosphere, shallow depth of field" width="600" height="400" src="/assets/site-home-showcase-image-4.webp" alt="מפגשי אסטרטגיה">
+        </div>
+        <div class="home-showcase-tile-content">
+          <h3>מפגשי אסטרטגיה</h3>
+          <p>משחקים מורכבים לחובבי אסטרטגיה עמוקה, בסביבה שקטה ומרוכזת.</p>
+        </div>
+      </div>
+
+      <div class="home-showcase-tile">
+        <div class="home-showcase-tile-image">
+          <img data-placeholder="home-showcase-image-5" data-context="Family-friendly board game night with parents and children playing together, warm cozy lighting, smiling faces, colorful game pieces, welcoming atmosphere for gaming entertainment" width="600" height="400" src="/assets/site-home-showcase-image-5.webp" alt="ערבים משפחתיים">
+        </div>
+        <div class="home-showcase-tile-content">
+          <h3>ערבים משפחתיים</h3>
+          <p>פעילויות מתאימות לכל המשפחה, שמחברות בין הדורות דרך משחק ומשותף.</p>
+        </div>
+      </div>
+
+      <div class="home-showcase-tile">
+        <div class="home-showcase-tile-image">
+          <img data-placeholder="home-showcase-image-6" data-context="Late night gaming session with dramatic neon lighting, poker chips and cards on dark table, moody atmospheric lighting with cyan and magenta accents, cinematic gaming venue photography" width="600" height="400" src="/assets/site-home-showcase-image-6.webp" alt="אתגרי לילה">
+        </div>
+        <div class="home-showcase-tile-content">
+          <h3>אתגרי לילה</h3>
+          <p>משחקים אינטנסיביים לשעות הקטנות, עם אווירה ייחודית ואנרגיה גבוהה.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="home-showcase-divider-wrapper">
+    <svg data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 1200 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="home-showcase-gold-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" style="stop-color:#FFD166;stop-"></stop>
+          <stop offset="15%" style="stop-color:#FFD166;stop-opacity:0.8"></stop>
+          <stop offset="85%" style="stop-color:#FFD166;stop-opacity:0.8"></stop>
+          <stop offset="100%" style="stop-color:#FFD166;stop-"></stop>
+        </linearGradient>
+      </defs>
+      <line x1="0" y1="2" x2="1200" y2="2" stroke="url(#home-showcase-gold-gradient)" stroke-width="1" stroke-dasharray="8,4" opacity="0.6"></line>
+      <rect x="0" y="3" width="1200" height="57" fill="url(#home-showcase-fade-gradient)"></rect>
+      <defs>
+        <linearGradient id="home-showcase-fade-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" style="stop-color:#121417;stop-opacity:1"></stop>
+          <stop offset="100%" style="stop-color:#F8FAFC;stop-opacity:1"></stop>
+        </linearGradient>
+      </defs>
+    </svg>
+  </div>
+</section>
+
+<section class="home-stats-section" data-layout-spec="בית-stats">
+  <div class="home-stats-container">
+    <div class="home-stats-intro">
+      <h2>בנוי ללילות בלתי נשכחים</h2>
+      <p>אירוח מקצועי עם סטאפים מעוצבים בקפידה ואווירה מלאת אנרגיה. כל ערב הוא חוויה שתזכרו לתמיד.</p>
+    </div>
+
+    <div class="home-stats-grid">
+      <div class="home-stats-item">
+        <div class="home-stats-number">50+</div>
+        <p>פורמטי משחק מותאמים אישית למגוון קהלים וסגנונות</p>
+      </div>
+      <div class="home-stats-item">
+        <div class="home-stats-number">24/7</div>
+        <p>מוכנות מלאה לאירועים עם סטאפים ברמה הגבוהה ביותר</p>
+      </div>
+      <div class="home-stats-item">
+        <div class="home-stats-number">100%</div>
+        <p>אפשרויות ידידותיות לכל הגילאים ורמות הניסיון</p>
+      </div>
+      <div class="home-stats-item">
+        <div class="home-stats-number">∞</div>
+        <p>אנרגיה של לילה מאוחר שממשיכה עד השעות הקטנות</p>
+      </div>
+    </div>
+
+    <div class="home-stats-quality">
+      <h3>איכות ללא פשרות</h3>
+      <p>כל פרט מתוכנן בקפידה כדי ליצור חוויה פרימיום שמשלבת מקצועיות עם אווירה חמה ומזמינה.</p>
+    </div>
+  </div>
+
+  <div class="home-stats-divider-wrapper">
+    <svg data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 1200 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,100 L0,60 Q150,55 300,62 T600,35 Q750,42 900,62 T1200,60 L1200,100 Z" fill="var(--bg-dark)" stroke="var(--primary)" stroke-width="1"></path>
+    </svg>
+  </div>
+</section>
+
+<section class="home-testimonials-section" data-layout-spec="בית-testimonials">
+  <div class="home-testimonials-container">
+    <div class="home-testimonials-intro">
+      <h2>מה האורחים אומרים</h2>
+      <p>אנרגיה עקבית ואירוח בלתי נשכח בכל ערב משחקים</p>
+    </div>
+    
+    <div class="home-testimonials-grid">
+      <div class="home-testimonials-card home-testimonials-card-large">
+        <p class="home-testimonials-quote">"האווירה פה פשוט מטורפת! כל פעם מחדש מרגישים את האנרגיה והריגוש. המארגנים יודעים בדיוק איך להכניס את כולם לאווירה."</p>
+        <p class="home-testimonials-attribution">— יעל כהן, אורחת קבועה</p>
+      </div>
+      
+      <div class="home-testimonials-card-stack">
+        <div class="home-testimonials-card home-testimonials-card-small">
+          <p class="home-testimonials-quote">"המגוון של המשחקים פה לא נגמר. יש תמיד משהו חדש ומרגש לנסות, וזה שומר על הערבים טריים ומעניינים."</p>
+          <p class="home-testimonials-attribution">— דני לוי, חובב משחקים</p>
+        </div>
+        
+        <div class="home-testimonials-card home-testimonials-card-small">
+          <p class="home-testimonials-quote">"הכל זורם חלק מהרגע הראשון ועד הסוף. ארגון מושלם, שירות מעולה, וחוויה שאי אפשר לשכוח."</p>
+          <p class="home-testimonials-attribution">— מיכל רוזן, מארגנת אירועים</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="home-testimonials-divider-wrapper">
+    <svg data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 1200 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="home-testimonials-perf-glow" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" style="stop-color:#E91E8C;stop-opacity:0.15"></stop>
+          <stop offset="100%" style="stop-color:#E91E8C;stop-"></stop>
+        </linearGradient>
+      </defs>
+      <path d="M0,60 L0,25 Q20,22 40,25 T80,22 Q100,25 120,22 T160,25 Q180,22 200,25 T240,22 Q260,25 280,22 T320,25 Q340,22 360,25 T400,22 Q420,25 440,22 T480,25 Q500,22 520,25 T560,22 Q580,25 600,22 T640,25 Q660,22 680,25 T720,22 Q740,25 760,22 T800,25 Q820,22 840,25 T880,22 Q900,25 920,22 T960,25 Q980,22 1000,25 T1040,22 Q1060,25 1080,22 T1120,25 Q1140,22 1160,25 T1200,22 L1200,60 Z" fill="#121417"></path>
+      <g fill="url(#home-testimonials-perf-glow)">
+        <circle cx="30" cy="28" r="2.5"></circle>
+        <circle cx="90" cy="24" r="2.5"></circle>
+        <circle cx="150" cy="27" r="2.5"></circle>
+        <circle cx="210" cy="24" r="2.5"></circle>
+        <circle cx="270" cy="28" r="2.5"></circle>
+        <circle cx="330" cy="25" r="2.5"></circle>
+        <circle cx="390" cy="24" r="2.5"></circle>
+        <circle cx="450" cy="27" r="2.5"></circle>
+        <circle cx="510" cy="24" r="2.5"></circle>
+        <circle cx="570" cy="28" r="2.5"></circle>
+        <circle cx="630" cy="25" r="2.5"></circle>
+        <circle cx="690" cy="24" r="2.5"></circle>
+        <circle cx="750" cy="27" r="2.5"></circle>
+        <circle cx="810" cy="24" r="2.5"></circle>
+        <circle cx="870" cy="28" r="2.5"></circle>
+        <circle cx="930" cy="25" r="2.5"></circle>
+        <circle cx="990" cy="24" r="2.5"></circle>
+        <circle cx="1050" cy="27" r="2.5"></circle>
+        <circle cx="1110" cy="24" r="2.5"></circle>
+        <circle cx="1170" cy="28" r="2.5"></circle>
+      </g>
+    </svg>
+  </div>
+</section>
+
+<section class="home-cta-section" data-layout-spec="בית-cta">
+  <div class="home-cta-container">
+    <div class="home-cta-accent-line"></div>
+    <h2 class="home-cta-heading">מוכנים לתכנן ערב משחקים אגדי?</h2>
+    <p class="home-cta-text">צרו קשר כדי לברר זמינות ופרטים נוספים על חוויות המשחק המותאמות שלנו</p>
+    <a href="/contact" class="home-cta-button">
+      <span>צרו קשר</span>
+    </a>
+  </div>
+</section>
+  </main>
+  
+  <footer class="site-footer"><div class="footer-container"><div class="footer-grid"><div class="footer-column footer-about"><img src="/assets/business-logo.webp" alt="RoyalFlush" class="logo" /><p class="footer-description">המקום שלך למשחקים ובידור ברמה הגבוהה ביותר. חוויה בלתי נשכחת לכל המשפחה.</p><div class="social-links"><a href="[facebook_handle]" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a><a href="[instagram_handle]" aria-label="Instagram"><i class="fab fa-instagram"></i></a><a href="[whatsapp_handle]" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a></div></div><div class="footer-column footer-links"><h3>קישורים מהירים</h3><ul><li><a href="/about">אודות</a></li><li><a href="/events">אירועים</a></li><li><a href="/contact">צור קשר</a></li></ul></div><div class="footer-column footer-contact"><h3>יצירת קשר</h3><ul class="contact-list"><li><i class="fas fa-envelope"></i><a href="mailto:[business_email]">[business_email]</a></li><li><i class="fas fa-phone"></i><a href="tel:[business_phone]">[business_phone]</a></li><li><a href="/"><i class="fas fa-map-marker-alt"></i><span>[business_address]</span></a></li></ul></div></div><div class="footer-bottom"><div class="footer-bottom-content"><div class="legal-links"><a href="/privacy">מדיניות פרטיות</a><span class="separator">|</span><a href="/terms">תנאים והגבלות</a><span class="separator">|</span>
+            <a href="/return-policy" aria-label="מדיניות החזרות">
+              מדיניות החזרות
+            </a><span class="separator">|</span><a href="/accessibility">הצהרת נגישות</a></div><div class="copyright"><p>© 2026 RoyalFlush. כל הזכויות שמורות.</p></div><div class="attribution"><a href="https://zappy5.com" target="_blank" class="zappy-attribution">Generated by Zappy</a></div></div></div></div></footer>
+  
+  <a href="https://wa.me/[whatsapp_handle]" class="whatsapp-float" aria-label="WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+  
+  <script src="/script.js"></script>
+
+    <div data-integration="accessibility:toolbar"></div>
+
+    <script id="zappy-mobile-submenu-script">
+    (function() {
+      function initMobileSubmenuToggles() {
+        if (window.innerWidth > 768) {
+          document.querySelectorAll('.mobile-submenu-toggle').forEach(function(btn) { btn.remove(); });
+          document.querySelectorAll('.sub-menu.mobile-expanded').forEach(function(menu) { menu.classList.remove('mobile-expanded'); });
+          return;
+        }
+        var items = document.querySelectorAll('.nav-menu li:has(.sub-menu), nav li:has(.sub-menu), .navbar li:has(.sub-menu), #navMenu li:has(.sub-menu)');
+        items.forEach(function(li) {
+          if (li.querySelector('.mobile-submenu-toggle')) return;
+          var submenu = li.querySelector('.sub-menu');
+          var parentLink = li.querySelector(':scope > a');
+          if (!submenu || !parentLink) return;
+          var toggleBtn = document.createElement('button');
+          toggleBtn.className = 'mobile-submenu-toggle';
+          toggleBtn.setAttribute('aria-label', 'Toggle submenu');
+          toggleBtn.setAttribute('type', 'button');
+          parentLink.insertAdjacentElement('afterend', toggleBtn);
+          toggleBtn.addEventListener('click', function(e) {
+            e.preventDefault(); e.stopPropagation();
+            document.querySelectorAll('.sub-menu.mobile-expanded').forEach(function(menu) {
+              if (menu !== submenu) { menu.classList.remove('mobile-expanded'); var t = menu.parentElement.querySelector('.mobile-submenu-toggle'); if(t) t.classList.remove('expanded'); }
+            });
+            submenu.classList.toggle('mobile-expanded');
+            toggleBtn.classList.toggle('expanded');
+          });
+        });
+      }
+      if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', initMobileSubmenuToggles); }
+      else { initMobileSubmenuToggles(); }
+      var resizeTimer; window.addEventListener('resize', function() { clearTimeout(resizeTimer); resizeTimer = setTimeout(initMobileSubmenuToggles, 250); });
+      // Re-initialize when mobile menu becomes visible (MutationObserver)
+      var observer = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+          if (mutation.type === 'attributes') {
+            var target = mutation.target;
+            if (target.classList && (target.classList.contains('active') || target.classList.contains('open'))) {
+              setTimeout(initMobileSubmenuToggles, 100);
+            }
+          }
+        });
+      });
+      setTimeout(function() {
+        document.querySelectorAll('.mobile-menu, .nav-menu, #navMenu, nav').forEach(function(menu) {
+          observer.observe(menu, { attributes: true, attributeFilter: ['class', 'style'] });
+        });
+      }, 500);
+    })();
+    </script>
+</body></html>
